@@ -1,0 +1,35 @@
+# Auto detect
+##   Handle line endings automatically for files detected as
+##   text and leave all files detected as binary untouched.
+##   This will handle all files NOT defined below.
+*                 text=auto
+
+# Go
+*.go              text diff=golang
+*.templ           text
+
+
+# Web
+*.css             text diff=css
+*.html            text diff=html
+*.js              text
+*.json            text
+*.sql             text
+
+# Docker
+Dockerfile        text
+
+# Documentation
+*.md              text diff=markdown
+LICENSE           text
+
+# Configs
+*.env             text
+.gitattributes    text
+Makefile          text
+
+# Graphics
+*.webp            binary
+
+# Ignore files
+.gitignore        text
