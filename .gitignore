@@ -1,0 +1,15 @@
+build
+tmp
+
+# IDEs
+.idea
+.vscode
+
+# Node
+node_modules/
+package.json
+package-lock.json
+
+
+# OS generated files
+.DS_Store

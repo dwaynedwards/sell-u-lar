@@ -1,0 +1,61 @@
+#:schema https://json.schemastore.org/any.json
+
+root = "."
+testdata_dir = "testdata"
+tmp_dir = "tmp"
+
+[build]
+args_bin = []
+bin = "./tmp/web"
+pre_cmd = ["make gen", "make css-build"]
+cmd = "go build -o ./tmp/web ./cmd/main.go"
+post_cmd = []
+delay = 0
+entrypoint = ["./tmp/web"]
+exclude_dir = ["static", "tmp", "vendor", "testdata", "node_modules"]
+exclude_file = []
+exclude_regex = ["_test.go", ".*_templ.go"]
+exclude_unchanged = false
+follow_symlink = false
+full_bin = ""
+include_dir = []
+include_ext = ["go", "tpl", "tmpl", "templ", "html", "css", "js"]
+include_file = []
+kill_delay = "5s"
+log = "build-errors.log"
+poll = false
+poll_interval = 0
+rerun = false
+rerun_delay = 500
+send_interrupt = true
+stop_on_error = true
+
+[color]
+app = ""
+build = "yellow"
+main = "magenta"
+runner = "green"
+watcher = "cyan"
+
+[log]
+main_only = false
+silent = false
+time = false
+
+[misc]
+clean_on_exit = true
+
+[proxy]
+# Enable live-reloading on the browser.
+enabled = true
+proxy_port = 8090
+app_port = 8080
+# Timeout in milliseconds for waiting for the app to start and become available.
+# Useful when your app has slow startup time (e.g., database connections, config loading).
+# The proxy will retry connecting to your app for this duration before giving up.
+# Default is 5000ms (5 seconds). Increase this if you see "unable to reach app" errors.
+app_start_timeout = 5000
+
+[screen]
+clear_on_rebuild = false
+keep_scroll = true
