@@ -36,6 +36,8 @@ func NewRouter() *http.ServeMux {
 	mux.Handle("GET /static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	mux.Handle("GET /", makeHTTPHandlerFunc(handleHome()))
+	mux.Handle("GET /products", makeHTTPHandlerFunc(handleNotFound()))
+	mux.Handle("GET /products/{id}", makeHTTPHandlerFunc(handleProduct()))
 
 	return mux
 }

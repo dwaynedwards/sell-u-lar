@@ -31,6 +31,14 @@ func InternalServerError(err any) Error {
 	}
 }
 
+func NotFoundError(err any) Error {
+	return Error{
+		ReferenceCode: NotFound,
+		StatusCode:    http.StatusNotFound,
+		Err:           err,
+	}
+}
+
 func (e Error) Error() string {
 	return errToString(e.Err)
 }
