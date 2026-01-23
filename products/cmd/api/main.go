@@ -7,14 +7,14 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/dwaynedwards/sell-u-lar/web/internal/http"
+	https "github.com/dwaynedwards/sell-u-lar/products/internal/http"
 )
 
 func main() {
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
 
-	s := http.NewServer()
+	s := https.NewServer()
 
 	slog.Info("Server starting up")
 

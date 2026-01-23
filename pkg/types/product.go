@@ -10,3 +10,5 @@ type Product struct {
 	Rating      float64 `json:"rating"`
 	Image       string  `json:"image"`
 }
+
+type Products []Product

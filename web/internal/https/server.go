@@ -1,4 +1,4 @@
-package http
+package https
 
 import (
 	"context"
@@ -28,9 +28,9 @@ func NewServer() *Server {
 }
 
 func (s *Server) Start() error {
-	slog.Info("Servering on localhost:8080")
+	slog.Info("Servering on:", "Host", "localhost", "Port", "3000")
 	var err error
-	if s.listener, err = net.Listen("tcp", ":8080"); err != nil {
+	if s.listener, err = net.Listen("tcp", ":3000"); err != nil {
 		return err
 	}
 
@@ -40,7 +40,7 @@ func (s *Server) Start() error {
 }
 
 func (s *Server) Stop() error {
-	slog.Info("Closing Server on localhost:8080")
+	slog.Info("Closing Server on:", "Host", "localhost", "Port", "3000")
 	ctx, cancel := context.WithTimeout(context.Background(), ShutdownTimeout)
 	defer cancel()
 

@@ -1,6 +1,10 @@
-.PHONY: dev
-dev:
+.PHONY: dev-web
+dev-web:
 	cd web; make dev
+
+.PHONY: dev-products
+dev-products:
+	cd products; make dev
 
 .PHONY: gen
 gen:
