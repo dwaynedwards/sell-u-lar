@@ -40,9 +40,9 @@ func Card(product types.Product) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(product.Image)
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(product.ImageUrl)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 11, Col: 26}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 11, Col: 29}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -55,20 +55,20 @@ func Card(product types.Product) templ.Component {
 		var templ_7745c5c3_Var3 string
 		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(product.Title + " image")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 11, Col: 59}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 11, Col: 62}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\" class=\"aspect-square w-full py-4 rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80\"><div class=\"mt-4 flex justify-between\"><div><h3 class=\"text-sm text-gray-700\"><a href=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\" class=\"aspect-square w-full py-4 rounded-md bg-gray-200 object-contain group-hover:opacity-75 lg:aspect-auto lg:h-80\"><div class=\"mt-4 flex justify-between\"><div><h3 class=\"text-sm text-gray-700\"><a href=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 templ.SafeURL
-		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinURLErrs(fmt.Sprintf("/products/%s", strings.ToLower(product.Sku)))
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinURLErrs(fmt.Sprintf("/devices/%s/%s", strings.ToLower(product.Brand), strings.ToLower(product.Sku)))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 15, Col: 72}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 15, Col: 106}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
@@ -92,9 +92,9 @@ func Card(product types.Product) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var6 string
-		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs("$" + fmt.Sprint(product.Price))
+		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs("$" + fmt.Sprint(float32(product.Price)/100))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 22, Col: 81}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/card/card.templ`, Line: 22, Col: 94}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {

@@ -1,14 +1,13 @@
 package types
 
 type Product struct {
-	ID          int     `json:"id"`
-	Title       string  `json:"title"`
-	Sku         string  `json:"sku"`
-	Brand       string  `json:"brand"`
-	Description string  `json:"description"`
-	Price       float64 `json:"price"`
-	Rating      float64 `json:"rating"`
-	Image       string  `json:"image"`
+	Sku         string `json:"sku" db:"sku"`
+	Title       string `json:"title" db:"title"`
+	Brand       string `json:"brand" db:"brand"`
+	Description string `json:"description" db:"description"`
+	Price       int    `json:"price" db:"price"`
+	Rating      int    `json:"rating" db:"rating"`
+	ImageUrl    string `json:"image_url" db:"image_url"`
 }
 
 type Products []Product

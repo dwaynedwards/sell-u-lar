@@ -23,6 +23,13 @@ type Error struct {
 	Err           any           `json:"err,omitempty"`
 }
 
+func InternalError(err any) Error {
+	return Error{
+		ReferenceCode: Internal,
+		Err:           err,
+	}
+}
+
 func InternalServerError(err any) Error {
 	return Error{
 		ReferenceCode: Internal,
@@ -45,6 +52,10 @@ func (e Error) Error() string {
 
 func As(err error, target any) bool {
 	return errors.As(err, target)
+}
+
+func Is(err error, target error) bool {
+	return errors.Is(err, target)
 }
 
 func errToString(msg any) string {

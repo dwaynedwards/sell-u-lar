@@ -7,6 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/dwaynedwards/sell-u-lar/pkg/db"
+	"github.com/dwaynedwards/sell-u-lar/products"
 	https "github.com/dwaynedwards/sell-u-lar/products/internal/http"
 )
 
@@ -14,7 +16,8 @@ func main() {
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
 
-	s := https.NewServer()
+	db := db.NewPostgres(products.Config.DatabaseURL)
+	s := https.NewServer(db)
 
 	slog.Info("Server starting up")
 
@@ -24,7 +27,6 @@ func main() {
 		err = s.Stop()
 		if err != nil {
 			slog.Error("Sever shutting down failed", slog.Any("err", err))
-			fmt.Fprintln(os.Stderr, err)
 		}
 		os.Exit(1)
 	}

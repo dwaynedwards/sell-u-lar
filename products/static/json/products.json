@@ -1,162 +1,146 @@
 [
   {
-    "id": 1,
-    "title": "iPhone 5s",
-    "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
-    "price": 199.99,
-    "rating": 2.83,
-    "brand": "Apple",
     "sku": "SMA-APP-IPH-1",
-    "image": "/static/images/iphone-5s/1.webp"
+    "title": "iPhone 5s",
+    "brand": "Apple",
+    "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
+    "price": 19999,
+    "rating": 283,
+    "image_url": "/static/images/iphone-5s/1.webp"
   },
   {
-    "id": 2,
-    "title": "iPhone 6",
-    "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
-    "price": 299.99,
-    "rating": 3.41,
-    "brand": "Apple",
     "sku": "SMA-APP-IPH-2",
-    "image": "/static/images/iphone-6/1.webp"
+    "title": "iPhone 6",
+    "brand": "Apple",
+    "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
+    "price": 29999,
+    "rating": 341,
+    "image_url": "/static/images/iphone-6/1.webp"
   },
   {
-    "id": 3,
-    "title": "iPhone 13 Pro",
-    "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
-    "price": 1099.99,
-    "rating": 4.12,
-    "brand": "Apple",
     "sku": "SMA-APP-IPH-3",
-    "image": "/static/images/iphone-13-pro/1.webp"
-  },
-  {
-    "id": 4,
-    "title": "iPhone X",
-    "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
-    "price": 899.99,
-    "rating": 2.51,
+    "title": "iPhone 13 Pro",
     "brand": "Apple",
+    "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+    "price": 109999,
+    "rating": 412,
+    "image_url": "/static/images/iphone-13-pro/1.webp"
+  },
+  {
     "sku": "SMA-APP-IPH-4",
-    "image": "/static/images/iphone-x/1.webp"
+    "title": "iPhone X",
+    "brand": "Apple",
+    "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
+    "price": 89999,
+    "rating": 251,
+    "image_url": "/static/images/iphone-x/1.webp"
   },
   {
-    "id": 5,
-    "title": "Oppo A57",
-    "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
-    "price": 249.99,
-    "rating": 3.94,
-    "brand": "Oppo",
     "sku": "SMA-OPP-OPP-5",
-    "image": "/static/images/oppo-a57/1.webp"
+    "title": "Oppo A57",
+    "brand": "Oppo",
+    "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
+    "price": 24999,
+    "rating": 394,
+    "image_url": "/static/images/oppo-a57/1.webp"
   },
   {
-    "id": 6,
-    "title": "Oppo F19 Pro Plus",
-    "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
-    "price": 399.99,
-    "rating": 3.51,
-    "brand": "Oppo",
     "sku": "SMA-OPP-OPP-6",
-    "image": "/static/images/oppo-f19-pro-plus/1.webp"
-  },
-  {
-    "id": 7,
-    "title": "Oppo K1",
-    "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
-    "price": 299.99,
-    "rating": 4.25,
+    "title": "Oppo F19 Pro Plus",
     "brand": "Oppo",
+    "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
+    "price": 39999,
+    "rating": 351,
+    "image_url": "/static/images/oppo-f19-pro-plus/1.webp"
+  },
+  {
     "sku": "SMA-OPP-OPP-7",
-    "image": "/static/images/oppo-k1/1.webp"
+    "title": "Oppo K1",
+    "brand": "Oppo",
+    "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
+    "price": 29999,
+    "rating": 425,
+    "image_url": "/static/images/oppo-k1/1.webp"
   },
   {
-    "id": 8,
-    "title": "Realme C35",
-    "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
-    "price": 149.99,
-    "rating": 4.2,
-    "brand": "Realme",
     "sku": "SMA-REA-REA-8",
-    "image": "/static/images/realme-c35/1.webp"
+    "title": "Realme C35",
+    "brand": "Realme",
+    "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
+    "price": 14999,
+    "rating": 420,
+    "image_url": "/static/images/realme-c35/1.webp"
   },
   {
-    "id": 9,
-    "title": "Realme X",
-    "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
-    "price": 299.99,
-    "rating": 3.7,
-    "brand": "Realme",
     "sku": "SMA-REA-REA-9",
-    "image": "/static/images/realme-x/1.webp"
-  },
-  {
-    "id": 10,
-    "title": "Realme XT",
-    "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
-    "price": 349.99,
-    "rating": 4.58,
+    "title": "Realme X",
     "brand": "Realme",
+    "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
+    "price": 29999,
+    "rating": 370,
+    "image_url": "/static/images/realme-x/1.webp"
+  },
+  {
     "sku": "SMA-REA-REA-10",
-    "image": "/static/images/realme-xt/1.webp"
+    "title": "Realme XT",
+    "brand": "Realme",
+    "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
+    "price": 34999,
+    "rating": 458,
+    "image_url": "/static/images/realme-xt/1.webp"
   },
   {
-    "id": 11,
-    "title": "Samsung Galaxy S7",
-    "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
-    "price": 299.99,
-    "rating": 3.3,
-    "brand": "Samsung",
     "sku": "SMA-SAM-SAM-11",
-    "image": "/static/images/samsung-galaxy-s7/1.webp"
+    "title": "Samsung Galaxy S7",
+    "brand": "Samsung",
+    "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
+    "price": 29999,
+    "rating": 330,
+    "image_url": "/static/images/samsung-galaxy-s7/1.webp"
   },
   {
-    "id": 12,
-    "title": "Samsung Galaxy S8",
-    "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
-    "price": 499.99,
-    "rating": 4.4,
-    "brand": "Samsung",
     "sku": "SMA-SAM-SAM-12",
-    "image": "/static/images/samsung-galaxy-s8/1.webp"
-  },
-  {
-    "id": 13,
-    "title": "Samsung Galaxy S10",
-    "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
-    "price": 699.99,
-    "rating": 3.06,
+    "title": "Samsung Galaxy S8",
     "brand": "Samsung",
+    "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
+    "price": 49999,
+    "rating": 440,
+    "image_url": "/static/images/samsung-galaxy-s8/1.webp"
+  },
+  {
     "sku": "SMA-SAM-SAM-13",
-    "image": "/static/images/samsung-galaxy-s10/1.webp"
+    "title": "Samsung Galaxy S10",
+    "brand": "Samsung",
+    "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
+    "price": 69999,
+    "rating": 306,
+    "image_url": "/static/images/samsung-galaxy-s10/1.webp"
   },
   {
-    "id": 14,
-    "title": "Vivo S1",
-    "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
-    "price": 249.99,
-    "rating": 3.5,
-    "brand": "Vivo",
     "sku": "SMA-VIV-VIV-14",
-    "image": "/static/images/vivo-s1/1.webp"
+    "title": "Vivo S1",
+    "brand": "Vivo",
+    "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
+    "price": 24999,
+    "rating": 350,
+    "image_url": "/static/images/vivo-s1/1.webp"
   },
   {
-    "id": 15,
-    "title": "Vivo V9",
-    "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
-    "price": 299.99,
-    "rating": 3.6,
-    "brand": "Vivo",
     "sku": "SMA-VIV-VIV-15",
-    "image": "/static/images/vivo-v9/1.webp"
+    "title": "Vivo V9",
+    "brand": "Vivo",
+    "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
+    "price": 29999,
+    "rating": 360,
+    "image_url": "/static/images/vivo-v9/1.webp"
   },
   {
-    "id": 16,
-    "title": "Vivo X21",
-    "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
-    "price": 499.99,
-    "rating": 4.26,
-    "brand": "Vivo",
     "sku": "SMA-VIV-VIV-16",
-    "image": "/static/images/vivo-x21/1.webp"
+    "title": "Vivo X21",
+    "brand": "Vivo",
+    "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
+    "price": 49999,
+    "rating": 426,
+    "image_url": "/static/images/vivo-x21/1.webp"
   }
 ]

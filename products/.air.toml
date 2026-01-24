@@ -7,7 +7,7 @@ tmp_dir = "tmp"
 [build]
 args_bin = []
 bin = "./tmp/api"
-pre_cmd = []
+pre_cmd = ["make docker-up"]
 cmd = "go build -o ./tmp/api ./cmd/api/main.go"
 post_cmd = []
 delay = 0

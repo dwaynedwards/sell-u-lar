@@ -8,6 +8,8 @@ package shared
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
+import "time"
+
 func header() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -29,7 +31,7 @@ func header() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<header>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<header class=\"relative bg-gray-900\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -66,7 +68,7 @@ func nav() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<nav></nav>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<nav aria-label=\"Top\" class=\"mx-auto max-w-7xl sm:px-6 lg:px-8\"><div class=\"border-b-2 border-gray-200 px-4 pb-14 sm:border-b-4 sm:px-0 sm:pb-0\"><div class=\"flex h-16 items-center justify-between\"><div class=\"flex flex-1\"><a href=\"/devices\"><span class=\"font-extrabold text-3xl text-gray-100\">Sell-U-Lar</span></a></div><div class=\"absolute inset-x-0 bottom-0 sm:static sm:flex-1 sm:self-stretch\"><div class=\"flex h-14 space-x-8 overflow-x-auto border-t-2 border-gray-200 px-4 pb-px sm:h-full sm:justify-center sm:overflow-visible sm:border-t-0 sm:pb-0\"><a href=\"/devices\" class=\"flex items-center text-sm font-medium text-gray-100 hover:text-gray-400\">All</a> <a href=\"/devices/apple\" class=\"flex items-center text-sm font-medium text-gray-100 hover:text-gray-400\">Apple</a> <a href=\"/devices/oppo\" class=\"flex items-center text-sm font-medium text-gray-100 hover:text-gray-400\">Oppo</a> <a href=\"/devices/realme\" class=\"flex items-center text-sm font-medium text-gray-100 hover:text-gray-400\">Realme</a> <a href=\"/devices/samsung\" class=\"flex items-center text-sm font-medium text-gray-100 hover:text-gray-400\">Samsung</a> <a href=\"/devices/vivo\" class=\"flex items-center text-sm font-medium text-gray-100 hover:text-gray-400\">Vivo</a></div></div><div class=\"flex flex-1 items-center justify-end\"><a href=\"#\" class=\"p-2 text-gray-400 hover:text-gray-500\"><span class=\"sr-only\">Search</span> <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" data-slot=\"icon\" aria-hidden=\"true\" class=\"size-6\"><path d=\"m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a><div class=\"ml-4 flow-root lg:ml-8\"><a href=\"#\" class=\"group -m-2 flex items-center p-2\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" data-slot=\"icon\" aria-hidden=\"true\" class=\"size-6 shrink-0 text-gray-400 group-hover:text-gray-500\"><path d=\"M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg> <span class=\"ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800\">0</span> <span class=\"sr-only\">items in cart, view bag</span></a></div></div></div></div></nav>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -95,7 +97,20 @@ func footer() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<footer></footer>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<footer class=\"bg-gray-900\"><div class=\"mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8\"><div class=\"flex justify-center gap-x-6 md:order-2\"><a href=\"https://github.com/dwaynedwards/sell-u-lar\" class=\"text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white\"><span class=\"sr-only\">GitHub</span> <svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" class=\"size-6\"><path d=\"M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z\" clip-rule=\"evenodd\" fill-rule=\"evenodd\"></path></svg></a></div><p class=\"mt-8 text-center text-base md:order-1 md:mt-0 text-gray-200\">&copy; ")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var4 string
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(time.Now().Local().Year())
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/shared/layout.templ`, Line: 63, Col: 108}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, " Sell-U-Lar, Inc. All rights reserved.</p></div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -119,25 +134,25 @@ func Layout(title string) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var4 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var4 == nil {
-			templ_7745c5c3_Var4 = templ.NopComponent
+		templ_7745c5c3_Var5 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var5 == nil {
+			templ_7745c5c3_Var5 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "<html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var5 string
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(title)
+		var templ_7745c5c3_Var6 string
+		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(title)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/shared/layout.templ`, Line: 22, Col: 17}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/shared/layout.templ`, Line: 73, Col: 17}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</title><link rel=\"stylesheet\" href=\"/static/css/tailwind.css\"><script src=\"/static/js/htmx.min.js\"></script></head><body class=\"bg-white\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</title><link rel=\"stylesheet\" href=\"/static/css/tailwind.css\"><script src=\"/static/js/htmx.min.js\"></script></head><body class=\"bg-white min-h-screen flex flex-col\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -145,15 +160,15 @@ func Layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<main>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "<main class=\"flex-grow\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ_7745c5c3_Var4.Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = templ_7745c5c3_Var5.Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</main>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</main>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -161,7 +176,7 @@ func Layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "</body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

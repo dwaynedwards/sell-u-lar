@@ -9,12 +9,13 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
+	"fmt"
 	"github.com/dwaynedwards/sell-u-lar/pkg/types"
 	"github.com/dwaynedwards/sell-u-lar/web/internal/templates/components/card"
 	"github.com/dwaynedwards/sell-u-lar/web/internal/templates/shared"
 )
 
-func Home(name string, products []types.Product) templ.Component {
+func DeviceBrands(title, brand string, products []types.Product) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -47,14 +48,14 @@ func Home(name string, products []types.Product) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8\"><h2 class=\"text-2xl font-bold tracking-tight text-gray-900\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"mx-auto max-w-2xl px-6 py-10 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8\"><h2 class=\"text-2xl font-bold tracking-tight text-gray-900\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
-			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(name)
+			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%s || %s", title, brand))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/pages/home.templ`, Line: 12, Col: 69}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/pages/device_brands.templ`, Line: 13, Col: 102}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -84,7 +85,7 @@ func Home(name string, products []types.Product) templ.Component {
 			}
 			return nil
 		})
-		templ_7745c5c3_Err = shared.Layout("Home").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = shared.Layout(fmt.Sprintf("%s | %s", title, brand)).Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

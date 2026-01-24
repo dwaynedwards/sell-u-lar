@@ -19,11 +19,15 @@ type Server struct {
 func NewServer() *Server {
 	s := &Server{
 		server: &http.Server{},
-		router: NewRouter(),
+		router: http.NewServeMux(),
 	}
 
 	s.server.Handler = http.HandlerFunc(s.router.ServeHTTP)
 
+	// Include the static content.
+	s.router.Handle("GET /static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+
+	s.registerProductRoutes()
 	return s
 }
 
