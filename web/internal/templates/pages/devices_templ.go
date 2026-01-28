@@ -14,7 +14,7 @@ import (
 	"github.com/dwaynedwards/sell-u-lar/web/internal/templates/shared"
 )
 
-func Devices(title string, products []types.Product) templ.Component {
+func Devices(title string, products *types.Products) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -64,7 +64,7 @@ func Devices(title string, products []types.Product) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			for _, product := range products {
+			for _, product := range *products {
 				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"group relative\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err

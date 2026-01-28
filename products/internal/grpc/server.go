@@ -1,19 +1,19 @@
-package https
+package grpc
 
 import (
 	"context"
+	"log"
 	"log/slog"
 	"net"
-	"net/http"
-	"time"
 
 	"github.com/dwaynedwards/sell-u-lar/pkg/db"
+	pb "github.com/dwaynedwards/sell-u-lar/pkg/proto/products"
 	"github.com/dwaynedwards/sell-u-lar/pkg/types"
+	"github.com/dwaynedwards/sell-u-lar/products"
 	"github.com/dwaynedwards/sell-u-lar/products/internal/services"
 	"github.com/dwaynedwards/sell-u-lar/products/internal/store"
+	"google.golang.org/grpc"
 )
-
-const ShutdownTimeout = 5 * time.Second
 
 type ProductsService interface {
 	ListProducts(ctx context.Context) (types.Products, error)
@@ -23,23 +23,17 @@ type ProductsService interface {
 
 type Server struct {
 	listener net.Listener
-	server   *http.Server
-	router   *http.ServeMux
+	server   *grpc.Server
 	db       db.Database
 	products ProductsService
+	pb.UnimplementedProductsServer
 }
 
 func NewServer(db db.Database) *Server {
 	s := &Server{
-		server:   &http.Server{},
-		router:   http.NewServeMux(),
 		db:       db,
 		products: services.NewProductsService(store.NewProductsStore(db)),
 	}
-
-	s.server.Handler = http.HandlerFunc(s.router.ServeHTTP)
-
-	s.registerProductRoutes()
 
 	return s
 }
@@ -51,24 +45,27 @@ func (s *Server) Start() (err error) {
 	}
 	slog.Info("Connected to DB")
 
-	if s.listener, err = net.Listen("tcp", ":3001"); err != nil {
+	if s.listener, err = net.Listen("tcp", products.Config.ProductsServerAddr); err != nil {
 		return err
 	}
-	slog.Info("Servering on:", "Host", "localhost", "Port", "3001")
+	slog.Info("Servering on:", "Addr", products.Config.ProductsServerAddr)
 
-	go s.server.Serve(s.listener)
+	s.server = grpc.NewServer()
+	pb.RegisterProductsServer(s.server, s)
+
+	go func() {
+		if err := s.server.Serve(s.listener); err != nil {
+			log.Fatalf("failed to serve: %v", err)
+		}
+	}()
 
 	return nil
 }
 
 func (s *Server) Stop() error {
-	slog.Info("Closing Server on:", "Host", "localhost", "Port", "3001")
-	ctx, cancel := context.WithTimeout(context.Background(), ShutdownTimeout)
-	defer cancel()
+	slog.Info("Closing Server on:", "Addr", products.Config.ProductsServerAddr)
 
-	if err := s.server.Shutdown(ctx); err != nil {
-		return err
-	}
+	s.server.Stop()
 
 	slog.Info("Closing connection to DB")
 	return s.db.Close()

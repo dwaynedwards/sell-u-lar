@@ -7,7 +7,8 @@ import (
 )
 
 type config struct {
-	ProductsServiceBaseUrl string
+	WebServerAddr       string
+	ProductsServiceAddr string
 }
 
 var Config config
@@ -42,6 +43,7 @@ func init() {
 	}
 
 	Config = config{
-		ProductsServiceBaseUrl: os.Getenv("PRODUCTS_SERVICE_BASE_URL"),
+		WebServerAddr:       os.Getenv("WEB_SERVER_ADDR"),
+		ProductsServiceAddr: os.Getenv("PRODUCTS_SERVICE_ADDR"),
 	}
 }

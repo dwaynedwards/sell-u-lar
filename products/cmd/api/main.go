@@ -9,7 +9,7 @@ import (
 
 	"github.com/dwaynedwards/sell-u-lar/pkg/db"
 	"github.com/dwaynedwards/sell-u-lar/products"
-	https "github.com/dwaynedwards/sell-u-lar/products/internal/http"
+	"github.com/dwaynedwards/sell-u-lar/products/internal/grpc"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
 
 	db := db.NewPostgres(products.Config.DatabaseURL)
-	s := https.NewServer(db)
+	s := grpc.NewServer(db)
 
 	slog.Info("Server starting up")
 
