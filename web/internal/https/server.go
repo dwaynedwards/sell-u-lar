@@ -42,6 +42,7 @@ func NewServer() *Server {
 
 	// Include the static content.
 	s.router.Handle("GET /static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+	s.router.Handle("GET /robots.txt", http.FileServer(http.Dir("./static")))
 
 	s.registerProductRoutes()
 	return s
